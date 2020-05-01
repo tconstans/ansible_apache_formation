@@ -1,7 +1,7 @@
 ---
 # tasks file for 15_apache
 - name: installation
-    yum: 
+    yum:
     name: httpd
     state: latest
 
@@ -37,6 +37,20 @@
     src: index.html
     dest: "{{ apache_documentroot }}/index.html"
     mode: 0644
+
+- name: install python passlib package
+  package:
+    name: python-passlib
+    state: present
+
+- name: passwd file
+  htpasswd:
+    path: "/etc/httpd/passwd"
+    name: tom
+    password: "123Soleil"
+    mode: 0640
+    owner: root
+    group: "apache"
 
 - name: start service
   service:
