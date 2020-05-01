@@ -29,13 +29,13 @@
 
 - name: create documentroot
     file:
-    name: "{{ apache_documentroot }}"
+    name: "/var/www/orsys.fr"
     state: directory
 
 - name: create index file
     copy:
     src: index.html
-    dest: "{{ apache_documentroot }}/index.html"
+    dest: "/var/www/orsys.fr/index.html"
     mode: 0644
 
 - name: install python passlib package
