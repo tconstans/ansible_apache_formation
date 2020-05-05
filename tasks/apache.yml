@@ -33,7 +33,7 @@
     state: directory
 
 - name: create index file
-  copy:
+  template:
     src: index.html
     dest: "/var/www/orsys.fr/index.html"
     mode: 0644
