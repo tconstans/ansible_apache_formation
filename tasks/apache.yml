@@ -1,12 +1,12 @@
 ---
 # tasks file for 15_apache
 - name: installation
-    yum:
+  yum:
     name: httpd
     state: latest
 
 - name: configuration
-    notify: reload httpd
+  notify: reload httpd
   template:
     src: vhost.conf
     dest: /etc/httpd/conf.d/vhost.conf
@@ -15,12 +15,12 @@
     group: apache
 
 - name: enable service
-    service:
+  service:
     name: httpd
     enabled: yes
 
 - name: open firewall port
-    firewalld:
+  firewalld:
     service: http
     permanent: yes
     immediate: yes
@@ -28,12 +28,12 @@
   ignore_errors: yes
 
 - name: create documentroot
-    file:
+  file:
     name: "/var/www/orsys.fr"
     state: directory
 
 - name: create index file
-    copy:
+  copy:
     src: index.html
     dest: "/var/www/orsys.fr/index.html"
     mode: 0644
