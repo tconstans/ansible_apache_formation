@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: apache
+  role_name: apache_formation
   author: Thomas Constans <thomas@opendoor.fr>
   description: Simple apache role set up for training purpose
   company: www.opendoor.fr

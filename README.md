@@ -1,5 +1,6 @@
 Role Name
 =========
+apache_formation
 
 NOT FOR PRODUCTION USE
 
@@ -26,7 +27,7 @@ Example Playbook
 ---
 - hosts: test
   roles:
-  - apache
+  - apache_formation
 
 License
 -------
