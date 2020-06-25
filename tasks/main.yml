@@ -1,4 +1,3 @@
 ---
-# tasks file for 15_apache
 - import_tasks: apache.yml
   tags: httpd

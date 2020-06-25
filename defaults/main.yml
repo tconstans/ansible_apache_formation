@@ -1,5 +1,1 @@
 ---
-# defaults file for 15_apache
-
-apache_documentroot: /var/www/html
-apache_password: "dont_do_that_dave !"

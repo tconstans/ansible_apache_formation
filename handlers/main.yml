@@ -1,5 +1,4 @@
 ---
-# handlers file for 15_apache
     - name: reload httpd
       service:
         name: httpd

@@ -14,8 +14,6 @@ None
 Role Variables
 --------------
 
-apache_documentroot - /var/www/html
-
 Dependencies
 ------------
 

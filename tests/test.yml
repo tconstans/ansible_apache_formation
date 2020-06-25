@@ -1,5 +1,4 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: centos
   roles:
-    - 15_apache
+    - tconstans.ansible_apache_formation

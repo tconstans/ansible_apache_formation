@@ -1,5 +1,4 @@
 ---
-# tasks file for 15_apache
 - name: installation
   yum:
     name: httpd
@@ -29,13 +28,13 @@
 
 - name: create documentroot
   file:
-    name: "/var/www/orsys.fr"
+    name: "/var/www/opendoor.fr"
     state: directory
 
 - name: create index file
   template:
     src: index.html
-    dest: "/var/www/orsys.fr/index.html"
+    dest: "/var/www/opendoor.fr/index.html"
     mode: 0644
 
 - name: install python passlib package
