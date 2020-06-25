@@ -1,8 +1,8 @@
 ---
 - name: installation
-  yum:
+  package:
     name: httpd
-    state: latest
+    state: present
 
 - name: configuration
   notify: reload httpd
