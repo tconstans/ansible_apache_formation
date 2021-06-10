@@ -1,4 +1,7 @@
 ---
+- name: import OS variables
+  include_vars: "{{ ansible_distribution |lower }}{{ ansible_distribution_major_version }}.yml"
+
 - name: installation
   package:
     name: httpd
@@ -39,7 +42,7 @@
 
 - name: install python passlib package
   package:
-    name: python-passlib
+    name: "{{ python_passlib_package }}"
     state: present
 
 - name: passwd file
