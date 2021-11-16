@@ -1,6 +1,6 @@
 ---
 - name: import OS variables
--  include_vars: "{{ ansible_distribution |lower }}{{ ansible_distribution_major_version }}.yml"
+  include_vars: "{{ ansible_distribution |lower }}{{ ansible_distribution_major_version }}.yml"
 
 - name: installation
   package:
@@ -21,28 +21,28 @@
     name: httpd
     enabled: yes
 
-  - name: setup firewall
-    block:
-    - name: install firewalld packages
-      yum:
-        name:
-        - python3-firewall
-        - firewalld
-        state: present
+- name: setup firewall
+  block:
+  - name: install firewalld packages
+    yum:
+      name:
+      - python3-firewall
+      - firewalld
+      state: present
 
-    - name: enable firewalld service
-      service:
-        name: firewalld
-        enabled: true
-        state: started
+  - name: enable firewalld service
+    service:
+      name: firewalld
+      enabled: true
+      state: started
 
-    - name: open firewall port
-      firewalld:
-        service: http
-        permanent: yes
-        immediate: yes
-        state: enabled
-      ignore_errors: true
+  - name: open firewall port
+    firewalld:
+      service: http
+      permanent: yes
+      immediate: yes
+      state: enabled
+    ignore_errors: true
 
 
 - name: create documentroot
